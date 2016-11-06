@@ -1,0 +1,15 @@
+let a = Array(205).fill(undefined);
+let b = Array(51).fill('BOMB');
+let field = shuffling(a.concat(b));
+
+Tabuleiro: 16x16 = 256
+Minas: 51
+
+
+Components:
+
+Header
+Board
+  Scoreboard
+  BattleField
+Footer
