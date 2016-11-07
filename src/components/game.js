@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Footer from './footer';
-import Board from './board';
+import Board from './board/board';
 import Header from './header';
 
 class Game extends Component {
