@@ -1,3 +1,10 @@
+Battlefield: 16x16 = 256
+Bombs: 51
+
+Deploy: https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/
+
+///////////////////////////////////
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
