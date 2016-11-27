@@ -1,7 +1,9 @@
 const getFields = function() {
 	let a = Array(205).fill(undefined);
-	let b = Array(51).fill({ value: 'BOMB', show: false });
-	return a.concat(b);
+	for (var i = 0; i < 51; i++) {
+		a.push({ value: 'BOMB', show: false });
+	}
+	return a;
 }
 
 let shuffling = function () {
