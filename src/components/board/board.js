@@ -11,11 +11,16 @@ class Board extends Component {
     this.state = {
       battlefield: undefined
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.revealField = this.revealField.bind(this);
   }
 
-  handleClick () {
-    console.log('clicked');
+  revealField (rowIndex, colIndex) {
+    let battlefield = [...this.state.battlefield];
+    battlefield[rowIndex][colIndex].show = true;
+
+    this.setState({
+      battlefield: battlefield
+    })
   }
 
   getBattlefield () {
@@ -28,7 +33,6 @@ class Board extends Component {
     this.setState({
       battlefield: battlefield
     });
-    console.log(battlefield);
   }
 
   render () {
@@ -38,7 +42,7 @@ class Board extends Component {
           <Scoreboard />
         </div>
         <div className="col-md-9">
-          <Battlefield battlefield={this.state.battlefield} onClick={this.handleClick} />
+          <Battlefield battlefield={this.state.battlefield} revealField={this.revealField} />
         </div>
       </div>
     );

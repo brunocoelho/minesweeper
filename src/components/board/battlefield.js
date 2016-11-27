@@ -12,7 +12,7 @@ class Battlefield extends Component {
       return (
         <div key={rowIndex}>
           {map(row, (field, colIndex) => {
-            return <Field key={colIndex} content={field} onClick={this.props.onClick} />
+            return <Field key={colIndex} content={field} revealField={() => this.props.revealField(rowIndex, colIndex)} />
           })}
         </div>
       );
