@@ -1,0 +1,59 @@
+.battlefield .field {
+  /*display: inline-block;*/
+  height: 40px;
+  width: 40px;
+  background: url('../images/sprite.png') no-repeat;
+  background-size: 194px 194px;
+}
+
+.battlefield .field.pristine {
+  background-position: -72px 0;
+}
+
+.battlefield .field.field-0 {
+  background-position: 0 -144px;
+}
+
+.battlefield .field.field-1 {
+  background-position: 0 -108px;
+}
+
+.battlefield .field.field-2 {
+  background-position: -36px -144px;
+}
+
+.battlefield .field.field-3 {
+  background-position: 0 -72px;
+}
+
+.battlefield .field.field-4 {
+  background-position: -36px -108px;
+}
+
+.battlefield .field.field-5 {
+  background-position: -72px -144px;
+}
+
+.battlefield .field.field-6 {
+  background-position: 0 -36px;
+}
+
+.battlefield .field.field-7 {
+  background-position: -36px -72px;
+}
+
+.battlefield .field.field-8 {
+  background-position: -72px -109px;
+}
+
+.battlefield .field.field-BOMB {
+  background-position: -108px -145px;
+}
+
+.battlefield .field.field-BLUE {
+  background-position: 0 0;
+}
+
+.battlefield .field.field-RED {
+  background-position: -36px -37px;
+}
