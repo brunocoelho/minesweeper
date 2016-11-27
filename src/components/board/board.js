@@ -3,6 +3,7 @@ import Battlefield from './battlefield';
 import Scoreboard from './scoreboard';
 import Shuffling from '../../utils/shuffling';
 import Matrix from '../../utils/matrix';
+import { positions } from '../constants';
 
 class Board extends Component {
   constructor (props) {

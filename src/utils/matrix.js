@@ -1,6 +1,6 @@
+import { positions } from '../constants';
 
 const getBombsNumber = (matrix, rowIndex, colIndex) => {
-	const positions = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
 	let counter = 0;
 
 	positions.forEach((position) => {
