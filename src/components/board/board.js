@@ -3,7 +3,7 @@ import Battlefield from './battlefield';
 import Scoreboard from './scoreboard';
 import Shuffling from '../../utils/shuffling';
 import Matrix from '../../utils/matrix';
-import { positions } from '../constants';
+import { positions } from '../../constants';
 
 class Board extends Component {
   constructor (props) {
@@ -14,9 +14,34 @@ class Board extends Component {
     this.revealField = this.revealField.bind(this);
   }
 
+  revealFieldsRecursively (battlefield, rowIndex, colIndex) {
+    positions.forEach((position) => {
+      let newRowIndex = rowIndex + position[0];
+      let newColIndex = colIndex + position[1];
+      let field = battlefield[newRowIndex] ? battlefield[newRowIndex][newColIndex] : undefined;
+      if (field && !field.show) {
+        if (field.value === 0) {
+          field.show = true;
+          battlefield = this.revealFieldsRecursively(battlefield, newRowIndex, newColIndex);
+        }
+        else if (field.value !== 'BOMB') {
+          field.show = true;
+        }
+      }
+    });
+
+    return battlefield;
+  }
+
   revealField (rowIndex, colIndex) {
     let battlefield = [...this.state.battlefield];
-    battlefield[rowIndex][colIndex].show = true;
+    let field = battlefield[rowIndex][colIndex];
+
+    field.show = true;
+
+    if (field.value === 0) {
+      battlefield = this.revealFieldsRecursively(battlefield, rowIndex, colIndex);
+    }
 
     this.setState({
       battlefield: battlefield
