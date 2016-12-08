@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Field from './field';
-import map from 'lodash/map';
 
 class Battlefield extends Component {
   constructor (props) {
@@ -8,10 +7,10 @@ class Battlefield extends Component {
   }
 
   renderFields () {
-    return map(this.props.battlefield, (row, rowIndex) => {
+    return this.props.battlefield.map((row, rowIndex) => {
       return (
         <div key={rowIndex}>
-          {map(row, (field, colIndex) => {
+          {row.map((field, colIndex) => {
             return <Field key={colIndex} content={field} revealField={() => this.props.revealField(rowIndex, colIndex)} />
           })}
         </div>
@@ -22,7 +21,7 @@ class Battlefield extends Component {
   render () {
     return (
       <div className="battlefield">
-        {this.renderFields()}
+        {this.props.battlefield && this.renderFields()}
       </div>
     );
   }
