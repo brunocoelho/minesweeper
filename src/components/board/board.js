@@ -54,10 +54,28 @@ class Board extends Component {
   }
 
   componentDidMount () {
+    let { base } = this.props;
     let battlefield = this.getBattlefield();
-    this.setState({
-      battlefield: battlefield
+    // this.setState({
+    //   battlefield: battlefield
+    // });
+
+    base.post('battlefield', {
+      data: { battlefield }
     });
+
+    this.ref = base.syncState('battlefield', {
+      context: this,
+      state: 'battlefield',
+      asArray: true
+      // then() {
+      //   this.setState({ loading: false})
+      // }
+    });
+  }
+
+  componentWillUnmount(){
+    this.props.base.removeBinding(this.ref);
   }
 
   render () {

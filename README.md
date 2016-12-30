@@ -3,6 +3,16 @@ Bombs: 51
 
 Deploy: https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/
 
+Next Steps:
+react-router
+  Criar tela de inicio
+  Ao clicar em iniciar levar para a tela do board
+reactfire
+  Fazer toda a integração de multiplayer
+react-redux
+  Integrar o redux.
+Deploy
+
 ///////////////////////////////////
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
